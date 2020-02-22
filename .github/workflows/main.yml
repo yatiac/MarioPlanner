@@ -12,13 +12,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - uses: iCrawl/action-tsc@v1
     - uses: actions/setup-node@master
       with:
         node-version: '10.x'
     - run: npm install    
     - run: npm run build
-    - name: Typescript compiler
-      uses: iCrawl/action-tsc@v1
     - uses: w9jds/firebase-action@master
       with:
         args: deploy --only functions,hosting
