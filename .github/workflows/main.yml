@@ -18,7 +18,7 @@ jobs:
     - run: npm install    
     - run: npm run build
     - run: cd functions
-    - run: nom install
+    - run: npm install
     - run: cd .. 
     - uses: w9jds/firebase-action@master
       with:
