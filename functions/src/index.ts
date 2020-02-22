@@ -3,11 +3,6 @@ import * as admin from 'firebase-admin';
 
 admin.initializeApp(functions.config().firebase);
 
-
-export const helloWorld = functions.https.onRequest((request, response) => {
- response.send("Hello ninjas!");
-});
-
 export const createNotification = (notification: FirebaseFirestore.DocumentData) => {
     return admin.firestore().collection('notifications').add({
         ...notification,
